@@ -16,7 +16,7 @@
   * 이상치에 Robust한 MCD(Minimum Covariance Determinant)모델을 사용하여 Unsupervised task를 Supervised task로 변경하여 추가적으로 머신러닝을 이용하여 Classification 진행
   * 🏆대회 최종 2등 달성(Private 3등)
  * * *
- ## 대회 진행 환경
+ ## 대회 진행 환경 & 역할
  프로젝트 진행 환경 : Google Colab
  
  팀구성 : 2명
