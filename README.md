@@ -30,22 +30,22 @@
     * Supervised task로 변경 후, Logistic Regression, CatBoost 모델 앙상블 진행
 * * *
 ## 진행 상세 과정
-1. 데이터 분석
+1.데이터 분석
   * 모든 데이터와 feature명이 개인정보 문제로 비식별화 되어있어 파생변수 생성 x.
   * Feature별  IQR을 벗어나는 이상치가 다수 존재하였으나, 대회 특성상 중요한 역할을 할 수 있다는 판단하에 제거하지 않음.
   * Validation에서 사기 비율 체크, 약 0.001055%
 
-2. 문제 접근 방식
+2.문제 접근 방식
   * Validation data set의 통계치 & 평가 데이터로 활용하여 이상치 탐지 모델 학습
   * 임의의 레이블을 생성 후 Classification 진행
   
-3. 모델링
+3.모델링
   * Validation 데이터를 평가지표 삼아 가장 성능이 좋은 이상치 탐지 모델 선택(MCD).
   * Validation 이상치 통계치를 이용하여 Train 데이터에서 이상치 값 N개 임의 설정
   * MCD를 이용하여 마할라노비스 거리 중 가장 멀다고 판단된 N개를 이상치로 임의 레이블링
   * 레이블링된 Train 데이터 셋을 이용하여 Classification task 진행
 
-4. 성능 향상 방법
+4.성능 향상 방법
   * Validation 통계치를 이용하여 Train Data Set에 이상치가 120개라 판단. 
      하지만, 120개로 고정하지 않고, ±5 범위로 폭넓게 실험하여 최적의 값 118 적용.
   * Test Set 평가에 Validation의 이상치 비율을 2~2.5배를 적용
